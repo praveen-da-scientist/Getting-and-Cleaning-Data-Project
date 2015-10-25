@@ -48,7 +48,7 @@ The data cleaning is done following a Nine step process which is detailed below:
 	
 ##Description of the variables in the "TidyDataset.txt" file
 General description of the file are given below:
- - TidyDataset.txt contains 35 observations and 81 variables
+ - TidyDataset.txt contains 180 observations and 81 variables
  - Variables present in the tidy data set file, their class and the sample values are given below,
     - Subject:
       Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30                        
@@ -76,4 +76,4 @@ General description of the file are given below:
          fBodyAccJerkMag   
          fBodyGyroMag   
          fBodyGyroJerkMag   
-   Class: Numeric
+Class: Numeric
