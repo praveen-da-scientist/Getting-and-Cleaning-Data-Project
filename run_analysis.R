@@ -73,16 +73,16 @@ names(activityLabels) <- c("Activity", "Activity_Desc")
 #The result is stored in the filteredData variable
 filteredData <- mergedData[,grepl("mean|std", colnames(mergedData))]
 
-#Add the Activity details to the filteredData
-filteredData <- cbind(mergedActvity,filteredData)
+#Add the Subject and Activity details to the filteredData
+filteredData <- cbind(mergedSubject,mergedActvity,filteredData)
 
 ##Step 3: Add descriptive Activity names to the dataset. In order to do this,
 #filteredData needs to be merged with the activityLabels
 tidyData = merge(activityLabels,filteredData,by.x="Activity",by.y="Activity",all=TRUE)
 
 ##Step 4: Appropriately labels the data set with descriptive variable names and 
-#adding subject to the data frame
-tidyData <- cbind(mergedSubject,dplyr::select(tidyData,-Activity))
+#removing the Activity from data frame
+tidyData <- dplyr::select(tidyData,-Activity)
 
 ##Step 5: From the tidyData created above, get another independent tidy data set with the average  
 #of each variable for each activity and each subject. Done using the summarise_each function 
